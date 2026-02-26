@@ -8,18 +8,30 @@ export function HomePage({ onSearch }) {
   const [q, setQ] = useState("");
 
   const features = [
-    { icon: <I.Shield />, title: "Dati Certificatitt", desc: "Informazioni ufficiali direttamente dal Registro Imprese, aggiornate in tempo reale tramite API InfoCamere.", color: t.accent },
+    { icon: <I.Shield />, title: "Dati Certificati", desc: "Informazioni ufficiali direttamente dal Registro Imprese, aggiornate in tempo reale tramite API InfoCamere.", color: t.accent },
     { icon: <I.Zap />, title: "Consegna Istantanea", desc: "Report generati e pronti per il download in meno di 30 secondi. Nessuna attesa, nessun processo manuale.", color: t.teal },
     { icon: <I.Globe />, title: "6 Milioni di Aziende", desc: "Copertura completa di tutte le imprese registrate in Italia, dalla ditta individuale alla S.p.A.", color: t.gold },
   ];
 
+  const heroBlobs = `
+    @keyframes floatA { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 33%{ transform: translate(60px,-40px) scale(1.1) rotate(120deg); } 66%{ transform: translate(-30px,50px) scale(0.95) rotate(240deg); } }
+    @keyframes floatB { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 33%{ transform: translate(-50px,60px) scale(1.08) rotate(-120deg); } 66%{ transform: translate(40px,-30px) scale(0.92) rotate(-240deg); } }
+    @keyframes floatC { 0%,100%{ transform: translate(0,0) scale(1); } 50%{ transform: translate(30px,40px) scale(1.15); } }
+    @keyframes pulse { 0%,100%{ opacity: 0.5; } 50%{ opacity: 0.8; } }
+  `;
+
   return (
     <>
+      <style>{heroBlobs}</style>
       {/* ─── HERO ─── */}
       <section style={{ position: "relative", padding: "88px 28px 72px", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, #F5F3EF 0%, #FAFAF8 60%, #FAFAF8 100%)", zIndex: 0 }} />
-        <div style={{ position: "absolute", top: -100, right: -100, width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(43,108,176,0.04) 0%, transparent 70%)", zIndex: 0 }} />
-        <div style={{ position: "absolute", bottom: -60, left: -60, width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(13,148,136,0.03) 0%, transparent 70%)", zIndex: 0 }} />
+
+        {/* Animated blobs */}
+        <div style={{ position: "absolute", top: "10%", left: "15%", width: 340, height: 340, borderRadius: "40% 60% 70% 30% / 40% 50% 60% 50%", background: "radial-gradient(circle, rgba(43,108,176,0.07) 0%, rgba(43,108,176,0.02) 50%, transparent 70%)", filter: "blur(40px)", animation: "floatA 20s ease-in-out infinite", zIndex: 0 }} />
+        <div style={{ position: "absolute", top: "5%", right: "10%", width: 420, height: 420, borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%", background: "radial-gradient(circle, rgba(13,148,136,0.06) 0%, rgba(13,148,136,0.02) 50%, transparent 70%)", filter: "blur(50px)", animation: "floatB 25s ease-in-out infinite", zIndex: 0 }} />
+        <div style={{ position: "absolute", bottom: "5%", left: "40%", width: 280, height: 280, borderRadius: "50% 60% 40% 70% / 60% 40% 60% 40%", background: "radial-gradient(circle, rgba(184,134,11,0.05) 0%, rgba(184,134,11,0.01) 50%, transparent 70%)", filter: "blur(35px)", animation: "floatC 18s ease-in-out infinite", zIndex: 0 }} />
+        <div style={{ position: "absolute", top: "30%", left: "50%", width: 160, height: 160, borderRadius: "50%", background: "radial-gradient(circle, rgba(43,108,176,0.05) 0%, transparent 70%)", filter: "blur(25px)", animation: "pulse 8s ease-in-out infinite, floatA 22s ease-in-out infinite reverse", zIndex: 0 }} />
 
         <div style={{ maxWidth: 720, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 18px", borderRadius: 20, background: t.bgCard, border: `1px solid ${t.border}`, boxShadow: t.shadow, marginBottom: 32 }}>
@@ -27,10 +39,13 @@ export function HomePage({ onSearch }) {
             <span style={{ fontSize: 13, fontWeight: 500, color: t.textMuted, fontFamily: sans }}>Collegato al Registro Imprese in tempo reale</span>
           </div>
 
-          <h1 style={{ fontSize: "clamp(34px, 5.5vw, 56px)", fontWeight: 700, lineHeight: 1.12, letterSpacing: "-1px", marginBottom: 20, color: t.bgNavy }}>
-            Conosci ogni azienda italiana,{" "}
-            <span style={{ color: t.accent }}>prima di decidere</span>
-          </h1>
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "80%", height: "120%", borderRadius: "50%", background: "radial-gradient(ellipse, rgba(43,108,176,0.08) 0%, transparent 70%)", filter: "blur(30px)", animation: "pulse 6s ease-in-out infinite", zIndex: 0 }} />
+            <h1 style={{ position: "relative", zIndex: 1, fontSize: "clamp(34px, 5.5vw, 56px)", fontWeight: 700, lineHeight: 1.12, letterSpacing: "-1px", marginBottom: 20, color: t.bgNavy }}>
+              Conosci ogni azienda italiana,{" "}
+              <span style={{ color: t.accent }}>prima di decidere</span>
+            </h1>
+          </div>
 
           <p style={{ fontSize: 17, color: t.textBody, lineHeight: 1.7, maxWidth: 500, margin: "0 auto 40px", fontFamily: sans }}>
             Report aziendali con dati ufficiali: bilanci, esponenti, score creditizio. Tutto in un documento professionale, pronto in pochi secondi.

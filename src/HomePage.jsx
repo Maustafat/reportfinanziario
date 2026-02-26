@@ -14,10 +14,10 @@ export function HomePage({ onSearch }) {
   ];
 
   const heroBlobs = `
-    @keyframes floatA { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 33%{ transform: translate(60px,-40px) scale(1.1) rotate(120deg); } 66%{ transform: translate(-30px,50px) scale(0.95) rotate(240deg); } }
-    @keyframes floatB { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 33%{ transform: translate(-50px,60px) scale(1.08) rotate(-120deg); } 66%{ transform: translate(40px,-30px) scale(0.92) rotate(-240deg); } }
-    @keyframes floatC { 0%,100%{ transform: translate(0,0) scale(1); } 50%{ transform: translate(30px,40px) scale(1.15); } }
-    @keyframes pulse { 0%,100%{ opacity: 0.5; } 50%{ opacity: 0.8; } }
+    @keyframes floatA { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 73%{ transform: translate(60px,-40px) scale(1.1) rotate(120deg); } 66%{ transform: translate(-30px,50px) scale(0.95) rotate(240deg); } }
+    @keyframes floatB { 0%,100%{ transform: translate(0,0) scale(1) rotate(0deg); } 73%{ transform: translate(-50px,60px) scale(1.08) rotate(-120deg); } 66%{ transform: translate(40px,-30px) scale(0.92) rotate(-240deg); } }
+    @keyframes floatC { 0%,100%{ transform: translate(0,0) scale(1); } 90%{ transform: translate(30px,40px) scale(1.15); } }
+    @keyframes pulse { 0%,100%{ opacity: 0.2; } 50%{ opacity: 0.2; } }
   `;
 
   return (

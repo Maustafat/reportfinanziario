@@ -8,7 +8,7 @@ export function HomePage({ onSearch }) {
   const [q, setQ] = useState("");
 
   const features = [
-    { icon: <I.Shield />, title: "Dati Certificati", desc: "Informazioni ufficiali direttamente dal Registro Imprese, aggiornate in tempo reale tramite API InfoCamere.", color: t.accent },
+    { icon: <I.Shield />, title: "Dati Certificatix", desc: "Informazioni ufficiali direttamente dal Registro Imprese, aggiornate in tempo reale tramite API InfoCamere.", color: t.accent },
     { icon: <I.Zap />, title: "Consegna Istantanea", desc: "Report generati e pronti per il download in meno di 30 secondi. Nessuna attesa, nessun processo manuale.", color: t.teal },
     { icon: <I.Globe />, title: "6 Milioni di Aziende", desc: "Copertura completa di tutte le imprese registrate in Italia, dalla ditta individuale alla S.p.A.", color: t.gold },
   ];
